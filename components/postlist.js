@@ -3,6 +3,7 @@ import Link from "next/link";
 import { cx } from "@utils/all";
 import GetImage from "@utils/getImage";
 import { parseISO, format } from "date-fns";
+import { fr } from "date-fns/locale";
 import { PhotographIcon } from "@heroicons/react/outline";
 import CategoryLabel from "@components/blog/category";
 
@@ -98,7 +99,7 @@ export default function PostList({ post, aspect, preloadImage }) {
             dateTime={post?.publishedAt || post._createdAt}>
             {format(
               parseISO(post?.publishedAt || post._createdAt),
-              "MMMM dd, yyyy"
+              "dd MMMM yyyy", { locale: fr}
             )}
           </time>
         </div>

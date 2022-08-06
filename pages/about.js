@@ -11,11 +11,8 @@ export default function About({ authors, siteconfig }) {
     <Layout {...siteconfig}>
       <Container>
         <h1 className="mt-2 mb-3 text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
-          About
+          À propos
         </h1>
-        <div className="text-center">
-          <p className="text-lg">We are a small passionate team.</p>
-        </div>
 
         <div className="grid grid-cols-3 gap-5 mt-6 mb-16 md:mt-16 md:mb-32 md:gap-16">
           {authors.slice(0, 3).map(author => {
@@ -25,7 +22,7 @@ export default function About({ authors, siteconfig }) {
             return (
               <div
                 key={author._id}
-                className="relative overflow-hidden rounded-md aspect-square odd:translate-y-10 odd:md:translate-y-16">
+                className="relative overflow-hidden rounded-md aspect-square odd:translate-y-10 odd:md:translate-y-16 col-start-2">
                 <Image
                   {...imgprops}
                   alt={author.name || " "}
@@ -40,19 +37,10 @@ export default function About({ authors, siteconfig }) {
 
         <div className="mx-auto prose text-center dark:prose-invert mt-14">
           <p>
-            We provide real-time connectivity to enable software
-            providers and financial institutions to build integrated
-            products for their small business customers.
+            Champion de France en web développement, je suis actuellement développeur full-stack chez Sertizh, le #1 des logiciels pour les sports et les loisirs et en formation a MyDigitalSchool. Sur mon temps libre, je suis freelance pour du développement de site ou d'outil orienté web en tout genre.
           </p>
           <p>
-            Our API infrastructure is leveraged by clients ranging
-            from lenders to corporate card providers and business
-            forecasting tools, with use cases including automatic
-            reconciliation, business dashboarding, and loan
-            decisioning.
-          </p>
-          <p>
-            <Link href="/contact">Get in touch</Link>
+            <Link href="/contact">Prenez contact avec moi</Link>
           </p>
         </div>
       </Container>

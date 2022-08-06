@@ -18,6 +18,7 @@ import defaultOG from "/public/img/opengraph.jpg";
 import { singlequery, configQuery, pathquery } from "@lib/groq";
 import CategoryLabel from "@components/blog/category";
 import AuthorCard from "@components/blog/authorCard";
+import { fr } from "date-fns/locale";
 
 export default function Post(props) {
   const { postdata, siteconfig, preview } = props;
@@ -136,11 +137,11 @@ export default function Post(props) {
                           parseISO(
                             post?.publishedAt || post._createdAt
                           ),
-                          "MMMM dd, yyyy"
+                          "dd MMMM yyyy", { locale: fr}
                         )}
                       </time>
                       <span>
-                        · {post.estReadingTime || "5"} min read
+                        · {post.estReadingTime || "5"} min de lecture
                       </span>
                     </div>
                   </div>
