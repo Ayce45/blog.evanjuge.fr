@@ -1,10 +1,10 @@
 {
-  "name": "stablo",
+  "name": "Blog",
   "private": true,
   "version": "1.0.2",
-  "description": "Stablo is a JamStack Blog template built with Next.js, Tailwind CSS & Sanity CMS",
+  "description": "Blog built with Next.js, Tailwind CSS & Sanity CMS",
   "main": "package.json",
-  "author": "Surjith S M <surjithctly@gmail.com>",
+  "author": "Evan JUGE <contact@evanjuge.fr>",
   "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",

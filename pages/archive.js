@@ -52,7 +52,7 @@ export default function Post(props) {
                   alt: ""
                 }
               ],
-              site_name: "Stablo"
+              site_name: "Evan JUGE - Blog"
             }}
             twitter={{
               cardType: "summary_large_image"

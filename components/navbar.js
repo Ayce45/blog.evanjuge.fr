@@ -29,14 +29,9 @@ export default function Navbar(props) {
     },
     {
       label: "Github",
-      href: "https://github.com/web3templates/stablo",
+      href: "https://github.com/Ayce45",
       external: true
     },
-    {
-      label: "Download",
-      href: "https://web3templates.com/templates/stablo-minimal-blog-website-template",
-      external: true
-    }
   ];
 
   const mobilemenu = [...leftmenu, ...rightmenu];
@@ -69,7 +64,7 @@ export default function Navbar(props) {
                         />
                       ) : (
                         <span className="block text-center">
-                          Stablo
+                          Evan JUGE
                         </span>
                       )}
                     </a>
@@ -85,7 +80,7 @@ export default function Navbar(props) {
                         />
                       ) : (
                         <span className="block text-center">
-                          Stablo
+                          Evan JUGE
                         </span>
                       )}
                     </a>
