@@ -168,13 +168,13 @@ export default function Post(props) {
           {/* {post?.mainImage && <MainImage image={post.mainImage} />} */}
           <Container>
             <article className="max-w-screen-md mx-auto ">
-              <div className="mx-auto my-3 prose prose-base dark:prose-invert prose-a:text-blue-500">
+              <div className="mx-auto my-3 prose prose-base dark:prose-invert prose-a:text-blue-500 break-words">
                 {post.body && <PortableText value={post.body} />}
               </div>
               <div className="flex justify-center mt-7 mb-7">
                 <Link href="/">
                   <a className="px-5 py-2 text-sm text-blue-600 rounded-full dark:text-blue-500 bg-brand-secondary/20 ">
-                    ← View all posts
+                    ← Voir tous les articles
                   </a>
                 </Link>
               </div>
