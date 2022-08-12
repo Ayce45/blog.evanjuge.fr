@@ -20,7 +20,7 @@ export async function getServerSideProps({ res }) {
       post.slug.current === '/' ? '/' : `/post/${post.slug.current}`
     return `
       <loc>${baseUrl}${slug}</loc>
-      <changefreq>nerver</changefreq>
+      <changefreq>never</changefreq>
       <lastmod>${post._updatedAt}</lastmod>
       <priority>0.7</priority>
     `
