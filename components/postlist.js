@@ -32,8 +32,10 @@ export default function PostList({ post, aspect, preloadImage }) {
                   alt={post.mainImage.alt || "Thumbnail"}
                   placeholder="blur"
                   //sizes="80vw"
-                  sizes="(max-width: 640px) 90vw, 480px"
-                  layout="fill"
+                  //sizes="(max-width: 640px) 90vw, 480px"
+                  height={480}
+                  width={475}
+                  layout="responsive"
                   objectFit="cover"
                   priority={preloadImage ? true : false}
                   className="transition-all"
