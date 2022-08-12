@@ -1,6 +1,5 @@
 import groq from 'groq'
 import { getClient } from "@lib/sanity";
-import fs from "fs";
 
 export default function SiteMap() {
   return <div>loading</div>
@@ -41,27 +40,15 @@ export async function getServerSideProps({ res }) {
     `
   })
 
-  const staticPages = fs
-  .readdirSync("pages")
-  .filter((staticPage) => {
-    return ![
-      "_app.js",
-      "_document.js",
-      "_error.js",
-      "sitemap.xml.js",
-      "api",
-      "index.js",
-      "post",
-      "category",
-    ].includes(staticPage);
-  })
-  .map((slug) => {
+  const staticPages = ['about', 'archive', 'contact']
+  .map((name) => {
     return `
-        <loc>${baseUrl}/${slug.replaceAll('.js', '')}</loc>
+        <loc>${baseUrl}/${name}</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     `
   });
+
   const indexPage = `
     <loc>${baseUrl}/</loc>
     <changefreq>monthly</changefreq>

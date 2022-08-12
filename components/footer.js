@@ -10,7 +10,7 @@ export default function Footer(props) {
       <div className="text-sm text-center">
         Copyright © {new Date().getFullYear()} {props?.copyright}. Tous droits réservés.
       </div>
-      <div className="mt-1 text-sm text-center text-gray-500 dark:text-gray-600">
+      <div className="mt-1 text-sm text-center">
         Réalisé avec{" "}
         {/*  // ** 🙏  Can I ask you a favor? 🙏 **
             // Please do not remove the below link.

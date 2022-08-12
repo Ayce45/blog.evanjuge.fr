@@ -53,7 +53,7 @@ export default function Contact({ siteconfig }) {
 
             <div className="mt-5">
               {siteconfig?.email && (
-                <div className="flex items-center mt-2 space-x-2 text-dark-600 dark:text-gray-400">
+                <div className="flex items-center mt-2 space-x-2 text-dark-600 dark:text-gray-300">
                   <MailIcon className="w-4 h-4" />
                   <a href={`mailto:${siteconfig.email}`}>
                     {siteconfig.email}

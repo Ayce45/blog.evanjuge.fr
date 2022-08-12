@@ -124,12 +124,12 @@ export default function Post(props) {
                     )}
                   </div>
                   <div>
-                    <p className="text-gray-800 dark:text-gray-400">
+                    <p className="text-gray-800 dark:text-gray-300">
                       {post.author.name}
                     </p>
                     <div className="flex items-center space-x-2 text-sm">
                       <time
-                        className="text-gray-500 dark:text-gray-400"
+                        className="text-gray-500 dark:text-gray-300"
                         dateTime={
                           post?.publishedAt || post._createdAt
                         }>
@@ -193,7 +193,7 @@ const MainImage = ({ image }) => {
       <Image {...GetImage(image)} alt={image.alt || "Thumbnail"} />
       <figcaption className="text-center ">
         {image.caption && (
-          <span className="text-sm italic text-gray-600 dark:text-gray-400">
+          <span className="text-sm italic text-gray-600 dark:text-gray-300">
             {image.caption}
           </span>
         )}

@@ -38,7 +38,6 @@ export default function About({ authors, siteconfig }) {
         <div className="mx-auto prose text-center dark:prose-invert mt-14">
           <p>
             Champion de France en web développement, je suis actuellement développeur full-stack chez Sertizh, le #1 des logiciels pour les sports et les loisirs et en formation a MyDigitalSchool. Sur mon temps libre, je suis freelance pour du développement de site ou d&apos;outil orienté web en tout genre.
-            {process.env.NODE_ENV}
           </p>
           <p>
             <Link href="/contact">Prenez contact avec moi</Link>

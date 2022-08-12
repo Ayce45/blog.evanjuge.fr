@@ -6,8 +6,7 @@ module.exports = {
   swcMinify: true,
   experimental: {
     legacyBrowsers: false,
-    browsersListForSwc: true,
-    nftTracing: true 
+    browsersListForSwc: true
   },
   
 };
