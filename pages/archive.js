@@ -32,18 +32,20 @@ export default function Post(props) {
   const ogimage = siteConfig?.openGraphImage
     ? GetImage(siteConfig?.openGraphImage).src
     : defaultOG.src;
+
+  const description = 'Voir tous les articles que j\'ai rédigé.'
   return (
     <>
       {posts && siteConfig && (
         <Layout {...siteConfig}>
           <NextSeo
-            title={siteConfig?.title}
-            description={siteConfig?.description || ""}
+            title={`Archive - ${siteConfig.title}`}
+            description={description}
             canonical={siteConfig?.url}
             openGraph={{
               url: siteConfig?.url,
               title: siteConfig?.title,
-              description: siteConfig?.description || "",
+              description,
               images: [
                 {
                   url: ogimage,
@@ -52,7 +54,7 @@ export default function Post(props) {
                   alt: ""
                 }
               ],
-              site_name: "Evan JUGE - Blog"
+              site_name: siteConfig.title
             }}
             twitter={{
               cardType: "summary_large_image"
@@ -64,7 +66,7 @@ export default function Post(props) {
             </h1>
             <div className="text-center">
               <p className="mt-2 text-lg">
-                Voir tous les articles que nous avons rédigés.
+                {description}
               </p>
             </div>
             <div className="grid gap-10 mt-10 lg:gap-10 md:grid-cols-2 xl:grid-cols-3 ">

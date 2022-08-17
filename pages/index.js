@@ -47,7 +47,7 @@ export default function Post(props) {
                   alt: ""
                 }
               ],
-              site_name: "Evan JUGE"
+              site_name: siteConfig?.title
             }}
             twitter={{
               cardType: "summary_large_image"

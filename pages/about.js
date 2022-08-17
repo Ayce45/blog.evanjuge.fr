@@ -5,10 +5,40 @@ import { getClient } from "@lib/sanity";
 import GetImage from "@utils/getImage";
 import Image from "next/image";
 import Link from "next/link";
+import { NextSeo } from "next-seo";
 
 export default function About({ authors, siteconfig }) {
+
+  const description = 'Champion de France en web développement, je suis actuellement développeur full-stack chez Sertizh, le #1 des logiciels pour les sports et les loisirs et en formation a MyDigitalSchool. Sur mon temps libre, je suis freelance pour du développement de site ou d\'outil orienté web en tout genre.'
+
+  const ogimage = siteconfig?.openGraphImage
+  ? GetImage(siteconfig?.openGraphImage).src
+  : defaultOG.src;
+
   return (
     <Layout {...siteconfig}>
+      <NextSeo
+        title={`À propos - ${siteconfig.title}`}
+        description={description}
+        canonical={`${siteconfig?.url}/post/about`}
+        openGraph={{
+          url: `${siteconfig?.url}/post/about`,
+          title: `À propos - ${siteconfig.title}`,
+          description,
+          images: [
+            {
+              url: ogimage,
+              width: 800,
+              height: 600,
+              alt: ""
+            }
+          ],
+          site_name: siteconfig.title
+        }}
+        twitter={{
+          cardType: "summary_large_image"
+        }}
+      />
       <Container>
         <h1 className="mt-2 mb-3 text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
           À propos
@@ -37,7 +67,7 @@ export default function About({ authors, siteconfig }) {
 
         <div className="mx-auto prose text-center dark:prose-invert mt-14">
           <p>
-            Champion de France en web développement, je suis actuellement développeur full-stack chez Sertizh, le #1 des logiciels pour les sports et les loisirs et en formation a MyDigitalSchool. Sur mon temps libre, je suis freelance pour du développement de site ou d&apos;outil orienté web en tout genre.
+            {description}
           </p>
           <p>
             <Link href="/contact">Prenez contact avec moi</Link>

@@ -1,10 +1,16 @@
 import Container from "@components/container";
 import Layout from "@components/layout";
-import { getClient } from "@lib/sanity";
+import client, {
+  getClient,
+  usePreviewSubscription,
+  PortableText
+} from "@lib/sanity";
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import useWeb3Forms from "use-web3forms";
 import { configQuery } from "@lib/groq";
+import { NextSeo } from "next-seo";
+import GetImage from "@utils/getImage";
 import {
   LocationMarkerIcon,
   MailIcon,
@@ -22,6 +28,12 @@ export default function Contact({ siteconfig }) {
   const [isSuccess, setIsSuccess] = useState(false);
   const apiKey = siteconfig?.w3ckey;
 
+  const ogimage = siteconfig?.openGraphImage
+  ? GetImage(siteconfig?.openGraphImage).src
+  : defaultOG.src;
+
+  const description = 'Vous avez quelque chose à me dire ? Remplissez le formulaire ou envoyez un courriel.'
+
   const { submit: onSubmit } = useWeb3Forms({
     apikey: apiKey,
     from_name: "Evan JUGE - Blog",
@@ -36,7 +48,31 @@ export default function Contact({ siteconfig }) {
   });
 
   return (
+    <>
+  {siteconfig && (
     <Layout {...siteconfig}>
+      <NextSeo
+        title={`Contact - ${siteconfig.title}`}
+        description={description}
+        canonical={`${siteconfig?.url}/post/contact`}
+        openGraph={{
+          url: `${siteconfig?.url}/post/contact`,
+          title: `Contact - ${siteconfig.title}`,
+          description,
+          images: [
+            {
+              url: ogimage,
+              width: 800,
+              height: 600,
+              alt: ""
+            }
+          ],
+          site_name: siteconfig.title
+        }}
+        twitter={{
+          cardType: "summary_large_image"
+        }}
+      />
       <Container>
         <h1 className="mt-2 mb-3 text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
           Contact
@@ -48,7 +84,7 @@ export default function Contact({ siteconfig }) {
               Contact
             </h2>
             <p className="max-w-sm mt-5">
-              Vous avez quelque chose à me dire ? Remplissez le formulaire ou envoyez un courriel.
+              {description}
             </p>
 
             <div className="mt-5">
@@ -185,6 +221,8 @@ export default function Contact({ siteconfig }) {
         </div>
       </Container>
     </Layout>
+    )};
+  </>
   );
 }
 
