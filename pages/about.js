@@ -9,7 +9,7 @@ import { NextSeo } from "next-seo";
 
 export default function About({ authors, siteconfig }) {
 
-  const description = `Médaillé d’excellence international et champion de France en web développement, je suis actuellement développeur fullstack chez Yogosha. Sur mon temps libre, je suis freelance pour du développement de site ou d'outil orienté web en tout genre.`
+  const description = `Médaillé d’excellence international et champion de France en web développement, je suis actuellement développeur fullstack chez Digitaleo.`
 
   const ogimage = siteconfig?.openGraphImage
   ? GetImage(siteconfig?.openGraphImage).src
